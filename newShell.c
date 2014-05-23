@@ -251,8 +251,8 @@ int execute( char *argv[] , char *comand) {
 				
 				close( thepipe[0] );
 				
-				if ( wait( NULL ) == -1 )
-					perror( "wait" );
+				usleep( 500 );
+				
 				argv[1] = NULL;
 				execvp( argv[ sym.pos + 1 ], argv );
 			}
